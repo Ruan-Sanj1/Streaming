@@ -1,0 +1,16 @@
+:root{
+    /*Configurações iniciais/padronizadas*/
+    --cor-principal: #FFFFFF;
+    --cor-secundaria: #C0C0C0;
+    --cor-do-botao: #167BF7;
+    --cor-de-fundo: #00030C;
+    /*Variáveis que vão armazenar as cores*/
+    /*Quando quiser a cor da letra, basta escrever "--cor-principal"*/
+}
+
+body{
+    background-color: var(--cor-de-fundo);
+    /*var() é o que chama a nossa variável*/
+    color: var(--cor-principal)
+}
+
