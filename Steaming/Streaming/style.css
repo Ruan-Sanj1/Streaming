@@ -1,16 +1,203 @@
+*{
+/*O Asterisco seleciona tudo na página*/
+    margin:0;
+    padding:0;
+/*Estamos tirando a margem interna e externa de tudo*/
+}
+
 :root{
     /*Configurações iniciais/padronizadas*/
     --cor-principal: #FFFFFF;
     --cor-secundaria: #C0C0C0;
     --cor-do-botao: #167BF7;
     --cor-de-fundo: #00030C;
+    --botao-efeito: #96b7e0;
     /*Variáveis que vão armazenar as cores*/
     /*Quando quiser a cor da letra, basta escrever "--cor-principal"*/
+}
+
+.container{
+    height: 100vh;
+    /*Altura: 100% do viewport height (tela da pessoa)*/
+    display: grid;
+    /*Significa que os elementos vão estar dispostos em um "quadriculado"*/
+    grid-template-columns: 50% 50%;
+    /*Tamanho das colunas do grid: duas colunas de 50% cada*/
+}
+
+.container_caixa{
+    margin: 0 6em;
+    /*Margem: 0 (cima e baixo) 6em (esquerda e direita)*/
+}
+
+.principal{
+    background-image: url("img/Background.png");
+    background-repeat: no-repeat;
+    /*Estilo de repetição do fundo: não repetir*/
+    background-size: contain;
+    /*Tamanho do fundo: tamanho total do container*/
+    align-items: center;
+    /*Alinhamento dos itens (de cima pra baixo): centro*/
+    text-align: center;
 }
 
 body{
     background-color: var(--cor-de-fundo);
     /*var() é o que chama a nossa variável*/
-    color: var(--cor-principal)
+    color: var(--cor-principal);
+    font-size: 16px;
+    /*O tamanho das letras do body*/
+    font-weight: 400;
+    /*O "peso" das fontes, ou o quão grossas as letras são*/
 }
 
+.container_titulo{
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.container_imagem{
+    margin: 1em 0 2em 0;
+    /*1em= 16px*/
+    /*Respectivamente: cima, direita, baixo e esquerda*/
+    /*Macete: imagina que é um relógio começando meio-dia*/
+}
+
+.container_botao{
+    background-color: var(--cor-do-botao);
+    border-radius: 5px;
+    /*Raio da borda (borda aredondada) de 5px*/
+    padding: 2em;
+    /*Espaçamento interno de 2em (1em são 16px)*/
+    color: var(--cor-principal);
+    display: block;
+    /*O botão vão ocupar todo o espaço que consegue*/
+    text-decoration: none;
+    /*Decoração do texto: nenhuma (vai tirar o sublinhado)*/
+    margin-bottom: 1em;
+    /*Margin inferior de 16px*/
+}
+
+.container_botao:hover{
+    background-color: var(--botao-efeito);
+    color: var(--cor-de-fundo);
+}
+
+.botao_secundário{
+    background-color: transparent;
+    /*Cor de fundo transparente*/
+    border: 2px solid var(--cor-principal);
+    /*Borda de 2px solida da cor da variável*/
+}
+
+.container_aviso{
+    font-size: 12px;
+    color: var(--cor-secundaria)
+}
+
+.secundario{
+    align-items: center;
+    margin: 0 10em;
+    /*Margem (externa) 0 pra cima e pra 
+    baixo, e 10 pra esquerda e direita*/
+}
+
+.secundario_imagem{
+    width: 80%;
+}
+
+.container_descricao{
+    padding: 2em;
+}
+
+.descricao_titulo{
+    font-weight: 700;
+    /*Grossura da fonte*/
+    font-size: 48px;
+    /*Tamanho dela*/
+    color: var(--cor-principal);
+    /*Variável com a cor branca*/
+    margin-bottom: 0.1em;
+    /*Margem apenas para a parte de baixo*/
+}
+
+.descricao_texto{
+    color: var(--cor-secundaria);
+}
+
+.secundario_botao{
+    display: inline-block;
+    padding: 1em;
+    /*Esse é o tamanho do botão, 
+    já que é espaçamento interno*/
+    margin-top: 1em;
+}
+
+.dispositivos{
+    text-align: center;
+}
+
+.dispositivos_titulo{
+    font-size: 48px;
+    color: var(--cor-principal);
+}
+
+.dispositivos_lista{
+    display:flex;
+    /*O display inicial faz com que cada 
+    conteúdo bloqueie uma linha. O flex 
+    faz com que vários ocupem a mesma linha*/
+    justify-content: center;
+    list-style-type: none;
+    /*Estilo da lista: nenhum*/
+    margin: 5em 0;
+}
+
+.lista_item{
+    font-size: 32px;
+    color: var(--cor-principal);
+}
+
+.rodape{
+    text-align: center;
+    margin: 5em 3em;
+    /*5em pra cima e pra baixo e 3 pros lados*/
+}
+
+.rodape_lista{
+    display:flex;
+    justify-content: center;
+    list-style-type: none;
+    margin-top: 1em;
+    /*Cria uma margem só no topo de 16px*/
+}
+
+.lista_link a{
+    /*Aplicado a todas as tags <a> que estão dentro da classe*/
+    text-decoration: none;
+    /*Sem "decoração" no texto*/
+    color: var(--cor-principal);
+    margin: 0 16px 0 16px;
+    font-size: 14px;
+}
+
+.lista_link a:hover{
+    /*a pseudoclasse ":hover" descreve o que vai 
+    acontecer com os elementos daquela classe quando 
+    o mouse estiver em cima dele*/
+    color: var(--cor-do-botao);
+}
+
+.lista_link a:active{
+    /*a pseudoclasse ":active" descreve o 
+    comportamento do elemento no momento 
+    em que o mouse está clicando nele*/
+    color: purple;
+}
+
+.rodape_texto{
+    margin: 1em 0;
+    /*Pra cima e pra baixo 1em*/
+    color: var(--cor-secundaria);
+    font-size: 12px;
+}
